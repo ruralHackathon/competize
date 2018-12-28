@@ -3,7 +3,9 @@ package queuro.jegumi.es.queuro
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import android.widget.LinearLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState
 import com.vicpin.krealmextensions.queryFirst
@@ -12,11 +14,15 @@ import com.vicpin.krealmextensions.create
 import kotlinx.android.synthetic.main.queuro_card.*
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.profile_header.*
+import queuro.jegumi.es.queuro.adapter.OperationsAdapter
+import queuro.jegumi.es.queuro.model.Operation
 import queuro.jegumi.es.queuro.model.User
 
 class HomeFragment : Fragment() {
 
     private var user: User? = null
+    private var operationList: ArrayList<Operation> = ArrayList()
+    private var adapter = OperationsAdapter(operationList)
 
     companion object {
 
@@ -51,7 +57,11 @@ class HomeFragment : Fragment() {
             user?.dni = "123456789G"
             user?.create()
         }
-        profile_name_text_view.text = user?.getFullName()
+
+        operations_recycler_view.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
+        operations_recycler_view.adapter = adapter
+
+        loadOperations()
     }
 
     private fun initCard() {
@@ -73,6 +83,63 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun loadOperations() {
+        val operation = Operation()
+        operation.value = "20$"
+        operation.name = "booking"
+        operation.date = "23 Dic 11:08"
+        operationList.add(operation)
+
+        val operation1 = Operation()
+        operation1.value = "50$"
+        operation1.name = "Carrefour"
+        operation1.date = "24 Dic 11:08"
+        operationList.add(operation1)
+
+        val operation2 = Operation()
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        operation2.value = "2$"
+        operation2.name = "Bar Paco"
+        operation2.date = "27 Dic 11:08"
+        operationList.add(operation2)
+
+        val operation4 = Operation()
+        operation4.value = "2.5$"
+        operation4.name = "Bar Luis"
+        operation4.date = "29 Dic 11:08"
+        operationList.add(operation4)
+
     }
 
     private fun initToolbar() {

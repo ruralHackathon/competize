@@ -3,11 +3,16 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="profile_banner_height">350dp</dimen>
-    <dimen name="profile_edit_banner_height">240dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
     <dimen name="spacing_xlarge">32dp</dimen>
     <dimen name="spacing_small">8dp</dimen>
+
+    <dimen name="xlarge_text_size">22sp</dimen>
+    <dimen name="large_text_size">18sp</dimen>
+    <dimen name="regular_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="xsmall_text_size">12sp</dimen>
+
 
     <dimen name="profile_picture_size">128dp</dimen>
     <dimen name="spacing_xsmall">4dp</dimen>
@@ -23,14 +28,15 @@
     <dimen name="details_main_title_size">20sp</dimen>
     <dimen name="details_section_title_size">16sp</dimen>
 
-    <dimen name="title_size">16sp</dimen>
-    <dimen name="regular_size">14sp</dimen>
     <dimen name="action_size">15sp</dimen>
+
     <dimen name="small_map_height">150dp</dimen>
     <dimen name="job_logo_size">40dp</dimen>
     <dimen name="spacing_fab_bottom">70dp</dimen>
     <dimen name="search_height">40dp</dimen>
-    <dimen name="profile_text_size">18sp</dimen>
+
+
+
     <dimen name="subtext_size">12sp</dimen>
     <dimen name="business_thumbnail_height">120dp</dimen>
     <dimen name="competize_pager_height">350dp</dimen>
@@ -45,5 +51,7 @@
     <dimen name="profile_picture_margin_top">16dp</dimen>
     <dimen name="welcome_banners">100dp</dimen>
     <dimen name="main_banner_size">240dp</dimen>
+    <dimen name="bar_height">20px</dimen>
+    <dimen name="operation_size">48dp</dimen>
 
 </resources>

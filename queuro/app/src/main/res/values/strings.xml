@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">Queuro</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_account">Cuenta</string>
+    <string name="title_analytics">Análisis</string>
+    <string name="title_receive">Recibir</string>
 
     <string name="card_slide_message">Desliza para descubrir tu tarjeta</string>
     <string name="card_slide_back_message">Desliza para esconder tu tarjeta</string>
     <string name="card_date_birth"/>
     <string name="valid_date"/>
+    <string name="my_month">Mi mes</string>
+    <string name="incomes">Ingresos</string>
+    <string name="expenses">Gastos</string>
+    <string name="my_account">Cuenta</string>
+    <string name="available">Disponible</string>
 </resources>
