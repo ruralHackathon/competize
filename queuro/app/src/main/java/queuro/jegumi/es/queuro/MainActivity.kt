@@ -5,7 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import queuro.jegumi.es.queuro.scan.ScanFragment
+import queuro.jegumi.es.queuro.analytics.AnalyticsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                addFragment(ScanFragment.newInstance())
+                addFragment(AnalyticsFragment.newInstance())
                 return@OnNavigationItemSelectedListener true
             }
         }
