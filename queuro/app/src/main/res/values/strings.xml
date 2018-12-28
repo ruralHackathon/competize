@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Queuro</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="card_slide_message">Desliza para descubrir tu tarjeta</string>
+    <string name="card_slide_back_message">Desliza para esconder tu tarjeta</string>
+    <string name="card_date_birth"/>
+    <string name="valid_date"/>
+</resources>

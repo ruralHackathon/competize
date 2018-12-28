@@ -1,0 +1,49 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="profile_banner_height">350dp</dimen>
+    <dimen name="profile_edit_banner_height">240dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+
+    <dimen name="profile_picture_size">128dp</dimen>
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="card_business_radius">4dp</dimen>
+    <dimen name="thumbnail_medium_height">150dp</dimen>
+    <dimen name="thumbnail_height">180dp</dimen>
+    <dimen name="profile_button_size">60dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
+    <dimen name="news_height">300dp</dimen>
+
+    <dimen name="business_height">250dp</dimen>
+    <dimen name="details_main_title_size">20sp</dimen>
+    <dimen name="details_section_title_size">16sp</dimen>
+
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="regular_size">14sp</dimen>
+    <dimen name="action_size">15sp</dimen>
+    <dimen name="small_map_height">150dp</dimen>
+    <dimen name="job_logo_size">40dp</dimen>
+    <dimen name="spacing_fab_bottom">70dp</dimen>
+    <dimen name="search_height">40dp</dimen>
+    <dimen name="profile_text_size">18sp</dimen>
+    <dimen name="subtext_size">12sp</dimen>
+    <dimen name="business_thumbnail_height">120dp</dimen>
+    <dimen name="competize_pager_height">350dp</dimen>
+    <dimen name="panel_visible_height">118dp</dimen>
+    <dimen name="panel_visible_height_no_padding">102dp</dimen>
+    <dimen name="banner_height">100dp</dimen>
+
+    <dimen name="dan_id_title_size">16sp</dimen>
+    <dimen name="card_title_name">26sp</dimen>
+    <dimen name="card_title_dni">20sp</dimen>
+    <dimen name="card_logo_size">80dp</dimen>
+    <dimen name="profile_picture_margin_top">16dp</dimen>
+    <dimen name="welcome_banners">100dp</dimen>
+    <dimen name="main_banner_size">240dp</dimen>
+
+</resources>

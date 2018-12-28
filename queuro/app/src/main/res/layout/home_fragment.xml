@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoDragView="@id/card_container"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="@dimen/panel_visible_height"
+    sothree:umanoParallaxOffset="150dp"
+    sothree:umanoShadowHeight="0dp">
+
+    <RelativeLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/profile_header" />
+
+        <View
+            android:id="@+id/main_footer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/panel_visible_height_no_padding"
+            android:layout_alignParentBottom="true" />
+
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/spacing_medium"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="@dimen/spacing_medium">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/card_slide_message_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/spacing_medium"
+                android:text="@string/card_slide_message"
+                android:background="@drawable/card_shape"
+                android:textColor="@android:color/white" />
+
+            <include layout="@layout/queuro_card" />
+
+        </LinearLayout>
+    </FrameLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

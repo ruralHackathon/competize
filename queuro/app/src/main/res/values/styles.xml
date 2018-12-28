@@ -1,0 +1,177 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ProfileText">
+        <item name="android:textSize">@dimen/profile_text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="NewsItemTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="NewsItemBody">
+        <item name="android:textColor">@color/itemBody</item>
+    </style>
+
+    <style name="NewsItemBody.List">
+        <item name="android:maxLines">4</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="BusinessArea">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@color/colorBusinessArea</item>
+        <item name="android:padding">@dimen/spacing_xsmall</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="DanTitle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:paddingBottom">@dimen/spacing_small</item>
+        <item name="android:textSize">@dimen/dan_id_title_size</item>
+    </style>
+
+    <style name="CardTitle">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:paddingBottom">@dimen/spacing_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">@dimen/spacing_xsmall</item>
+    </style>
+
+    <style name="CardContent">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ListItemTitle">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ListItemSubTitle">
+        <item name="android:textSize">@dimen/action_size</item>
+    </style>
+
+    <style name="DetailsMainTitle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/details_main_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_small</item>
+    </style>
+
+    <style name="DetailsSectionHeader">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/details_section_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="BusinessAreaListTitle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/details_section_title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RegularContent">
+        <item name="android:textColor">@color/itemBody</item>
+        <item name="android:textSize">@dimen/regular_size</item>
+    </style>
+
+    <style name="SubContent">
+        <item name="android:textColor">@color/itemBody</item>
+        <item name="android:textSize">@dimen/subtext_size</item>
+    </style>
+
+    <style name="OverImageText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/details_section_title_size</item>
+        <item name="android:padding">@dimen/spacing_medium</item>
+        <item name="android:drawablePadding">@dimen/spacing_small</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="TextAction">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/action_size</item>
+        <item name="android:paddingTop">@dimen/spacing_small</item>
+        <item name="android:paddingBottom">@dimen/spacing_small</item>
+        <item name="android:paddingRight">@dimen/spacing_medium</item>
+        <item name="android:paddingLeft">@dimen/spacing_medium</item>
+        <item name="android:drawablePadding">@dimen/spacing_medium</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MainButton">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/spacing_small</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_small</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="ErrorMessage">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">@dimen/spacing_large</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="LoadingMessage">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">@dimen/spacing_large</item>
+    </style>
+
+    <style name="SettingsTitle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:paddingTop">@dimen/spacing_medium</item>
+        <item name="android:paddingBottom">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="SettingsItem">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:paddingTop">@dimen/spacing_small</item>
+        <item name="android:paddingBottom">@dimen/spacing_small</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="ListRecycler">
+        <item name="android:layout_marginLeft">@dimen/spacing_small</item>
+        <item name="android:layout_marginRight">@dimen/spacing_small</item>
+        <item name="android:paddingTop">@dimen/spacing_small</item>
+        <item name="android:paddingBottom">?attr/actionBarSize</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="DefaultTextView">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:paddingTop">@dimen/spacing_small</item>
+        <item name="android:paddingBottom">@dimen/spacing_small</item>
+    </style>
+
+</resources>
