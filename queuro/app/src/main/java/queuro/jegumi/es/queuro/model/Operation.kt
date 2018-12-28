@@ -13,6 +13,8 @@ open class Operation : RealmModel {
     open var id: Long = 0
     open var name: String? = ""
     open var description: String? = ""
-    open var value: String? = ""
+    open var value: Double? = 0.0
     open var date: String? = ""
+    open var type: Int = 0
+    open var area : Int = 0
 }

@@ -9,6 +9,8 @@
     <ImageView
             android:id="@+id/operation_image_view"
             android:layout_width="@dimen/operation_size"
+            android:padding="@dimen/spacing_xsmall"
+            android:layout_marginRight="@dimen/spacing_small"
             android:layout_height="@dimen/operation_size"/>
 
     <TextView

@@ -1,5 +1,6 @@
 package queuro.jegumi.es.queuro.adapter
 
+import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import queuro.jegumi.es.queuro.R
 import queuro.jegumi.es.queuro.extensions.inflate
 import queuro.jegumi.es.queuro.model.Operation
 
-class OperationsAdapter(private val operations: ArrayList<Operation>) :
+class OperationsAdapter(private val operations: List<Operation>) :
     RecyclerView.Adapter<OperationsAdapter.OperationHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OperationHolder {
@@ -47,8 +48,20 @@ class OperationsAdapter(private val operations: ArrayList<Operation>) :
             this.operation = operation
             nameTextView.text = operation.name
             descTextView.text = operation.date
-            valueTextView.text = operation.value
-            // thumbImageView.drawable = Con
+            valueTextView.text = operation.value.toString() + "€"
+            thumbImageView.setImageResource(getDrawable(operation.area))
+        }
+    }
+
+    private fun getDrawable(type: Int): Int {
+        return when(type) {
+            0 -> R.drawable.supermarket
+            1 -> R.drawable.restaurants
+            2 -> R.drawable.shops
+            3 -> R.drawable.transport
+            4 -> R.drawable.bank
+            else -> R.drawable.transport
+
         }
     }
 }
