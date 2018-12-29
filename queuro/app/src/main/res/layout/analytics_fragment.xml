@@ -2,16 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <FrameLayout
-            android:id="@+id/analytic_header"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/chart_height"
-            android:elevation="@dimen/spacing_small"
-            android:background="@color/colorWhite">
+        <RelativeLayout
+                android:id="@+id/analytic_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/chart_height"
+                android:elevation="@dimen/spacing_small"
+                android:paddingTop="@dimen/spacing_medium"
+                android:background="@color/colorWhite">
+
+        <TextView
+                style="@style/TitleText"
+                android:text="@string/my_month"
+                android:textColor="@android:color/black"
+                android:paddingLeft="@dimen/spacing_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                style="@style/BigTitleText"
+                android:id="@+id/month_date"
+                android:text="01 DIC/ 29DIC"
+                android:textColor="@android:color/black"
+                android:paddingRight="@dimen/spacing_medium"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         <com.anychart.AnyChartView
                 android:id="@+id/any_chart_view"
-                android:paddingTop="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_below="@id/month_date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
@@ -19,9 +39,9 @@
                 android:id="@+id/progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_centerInParent="true"/>
 
-    </FrameLayout>
+        </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/analytics_recycler_view"

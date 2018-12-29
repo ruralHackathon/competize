@@ -62,7 +62,7 @@
                 style="@style/CardTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/card_date_birth" />
+                android:text="test" />
 
             <TextView
                 android:id="@+id/card_number_text_view"
@@ -82,7 +82,7 @@
                 style="@style/CardTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/valid_date" />
+                android:text="test" />
 
             <TextView
                 android:id="@+id/card_valid_text_view"
