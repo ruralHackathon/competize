@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+            android:id="@+id/analytic_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/banner_height"
+            android:background="@color/colorPrimary"/>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/analytics_recycler_view"
             android:clipToPadding="false"
             android:paddingTop="@dimen/spacing_small"
+            android:layout_below="@id/analytic_header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
