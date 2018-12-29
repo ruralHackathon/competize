@@ -1,21 +1,27 @@
 package queuro.jegumi.es.queuro
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.MultiFormatWriter
+import com.google.zxing.WriterException
+import com.google.zxing.common.BitMatrix
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState
-import com.vicpin.krealmextensions.queryFirst
 import com.vicpin.krealmextensions.create
 import com.vicpin.krealmextensions.queryAll
+import com.vicpin.krealmextensions.queryFirst
 import com.vicpin.krealmextensions.save
-
-import kotlinx.android.synthetic.main.queuro_card.*
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.profile_header.*
+import kotlinx.android.synthetic.main.queuro_card.*
 import queuro.jegumi.es.queuro.adapter.OperationsAdapter
 import queuro.jegumi.es.queuro.model.Operation
 import queuro.jegumi.es.queuro.model.User
@@ -54,7 +60,7 @@ class HomeFragment : Fragment() {
             user?.name = "Jesús"
             user?.surname = "Gumiel"
             user?.card_number = "4242 4242 4242 4242"
-            user?.card_valid = "04/10/2020"
+            user?.card_valid = "10/20"
             user?.dni = "123456789G"
             user?.create()
 
@@ -170,10 +176,10 @@ class HomeFragment : Fragment() {
 
     private fun initCard() {
         card_name_text_view.text = user?.getFullName()
-        card_dni_text_view.text = user?.dni
         card_number_text_view.text = user?.card_number
         card_valid_text_view.text = user?.card_valid
 
+        card_image_view.setImageBitmap(getQrCode(user?.card_number!!))
         sliding_layout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener {
             override fun onPanelSlide(panel: View, slideOffset: Float) {
 
@@ -195,5 +201,41 @@ class HomeFragment : Fragment() {
 
     private fun formatDoubleValue(value: Double): String {
         return "%.2f".format(value) + "€"
+    }
+
+    @Throws(WriterException::class)
+    private fun getQrCode(Value: String): Bitmap? {
+        val bitMatrix: BitMatrix
+        try {
+            bitMatrix = MultiFormatWriter().encode(
+                Value,
+                BarcodeFormat.QR_CODE,
+                500, 500, null
+            )
+
+        } catch (Illegalargumentexception: IllegalArgumentException) {
+
+            return null
+        }
+
+        val bitMatrixWidth = bitMatrix.width
+        val bitMatrixHeight = bitMatrix.height
+        val pixels = IntArray(bitMatrixWidth * bitMatrixHeight)
+
+        for (y in 0 until bitMatrixHeight) {
+            val offset = y * bitMatrixWidth
+
+            for (x in 0 until bitMatrixWidth) {
+
+                pixels[offset + x] = if (bitMatrix.get(x, y))
+                    resources.getColor(R.color.colorBlack)
+                else
+                    resources.getColor(R.color.colorWhite)
+            }
+        }
+        val bitmap = Bitmap.createBitmap(bitMatrixWidth, bitMatrixHeight, Bitmap.Config.ARGB_4444)
+
+        bitmap.setPixels(pixels, 0, bitMatrixWidth, 0, 0, bitMatrixWidth, bitMatrixHeight)
+        return bitmap
     }
 }

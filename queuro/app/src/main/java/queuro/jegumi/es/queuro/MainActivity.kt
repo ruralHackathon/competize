@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         addFragment(HomeFragment.newInstance())
+        title = ""
     }
 
     private fun addFragment(fragment: Fragment) {

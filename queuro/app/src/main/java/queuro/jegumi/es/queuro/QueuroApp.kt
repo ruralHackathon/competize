@@ -5,14 +5,14 @@ import android.content.Context
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class QueroApp : Application() {
+class QueuroApp : Application() {
 
     init {
         instance = this
     }
 
     companion object {
-        private var instance: QueroApp? = null
+        private var instance: QueuroApp? = null
 
         fun applicationContext(): Context {
             return instance!!.applicationContext

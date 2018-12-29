@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Queuro</string>
+    <string name="queuro_name">Queuro</string>
     <string name="title_account">Cuenta</string>
     <string name="title_analytics">Análisis</string>
     <string name="title_pay">Pagar</string>

@@ -11,6 +11,7 @@
     <color name="colorProfileButton">#6633691E</color>
     <color name="colorProfileButtonSelected">#3333691E</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
     <color name="colorOverlay">#66212121</color>
     <color name="colorDivider">#66929292</color>
     <color name="colorBusinessArea">#484848</color>
