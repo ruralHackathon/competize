@@ -50,15 +50,16 @@ class AnalyticsFragment : Fragment() {
             categoryList.get(operation.area).value += operation.value!!
             categoryList.get(operation.area).operations++
             categoryList.get(operation.area).percentage =
-                    (operations.size / categoryList.get(operation.area).operations).toDouble()
+                    ((100 * categoryList.get(operation.area).operations) / operations.size).toDouble()
         }
 
+        val categoryListFinal: ArrayList<Category> = ArrayList()
         for (category in categoryList) {
-            if (category.value == 0.0) {
-                categoryList.remove(category)
+            if (category.value > 0.0) {
+                categoryListFinal.add(category)
             }
         }
 
-        return categoryList
+        return categoryListFinal
     }
 }

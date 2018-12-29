@@ -49,8 +49,8 @@ class CategoriesAdapter(private val categories: List<Category>) :
             this.category = category
             nameTextView.text = category.name
             descTextView.text = category.operations.toString() + " operaciones"
-            percentageTextView.text = category.percentage.toString() + "%"
-            valueTextView.text = category.value.toString() + "€"
+            percentageTextView.text = formatDoubleValue(category.percentage) + "%"
+            valueTextView.text = formatDoubleValue(category.value)+ "€"
             thumbImageView.setImageResource(getDrawable(category.area))
         }
     }
@@ -65,6 +65,10 @@ class CategoriesAdapter(private val categories: List<Category>) :
             else -> R.drawable.transport
 
         }
+    }
+
+    private fun formatDoubleValue(value: Double): String {
+        return "%.2f".format(value)
     }
 }
 
