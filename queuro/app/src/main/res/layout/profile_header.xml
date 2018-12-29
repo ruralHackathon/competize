@@ -14,21 +14,32 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/spacing_small"
             android:padding="@dimen/spacing_medium">
 
         <TextView
+                android:id="@+id/hello_message"
                 style="@style/TitleText"
-                android:text="@string/my_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:text="@string/hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/spacing_large"/>
 
         <TextView
                 style="@style/BigTitleText"
                 android:id="@+id/month_date"
                 android:text="01 DIC/ 29DIC"
                 android:layout_alignParentRight="true"
+                android:layout_below="@id/hello_message"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                style="@style/TitleText"
+                android:text="@string/my_month"
+                android:layout_width="wrap_content"
+                android:layout_alignBottom="@id/month_date"
                 android:layout_height="wrap_content"/>
 
         <TextView
