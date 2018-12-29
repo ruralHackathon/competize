@@ -15,10 +15,8 @@ import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState
-import com.vicpin.krealmextensions.create
-import com.vicpin.krealmextensions.queryAll
-import com.vicpin.krealmextensions.queryFirst
-import com.vicpin.krealmextensions.save
+import com.vicpin.krealmextensions.*
+import io.realm.Sort
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.profile_header.*
 import kotlinx.android.synthetic.main.queuro_card.*
@@ -68,7 +66,7 @@ class HomeFragment : Fragment() {
             operation.id = 1
             operation.value = 40.25
             operation.name = "Restaurante Meco"
-            operation.date = "23 Dic 11:08"
+            operation.date = "23 dic. 11:08"
             operation.type = 0
             operation.area = 1
             operation.save()
@@ -77,7 +75,7 @@ class HomeFragment : Fragment() {
             operation1.id = 2
             operation1.value = 50.69
             operation1.name = "Supermercado Dia"
-            operation1.date = "24 Dic 11:08"
+            operation1.date = "24 dic. 11:08"
             operation1.type = 0
             operation1.area = 0
             operation1.save()
@@ -86,7 +84,7 @@ class HomeFragment : Fragment() {
             operation2.id = 3
             operation2.value = 1.2
             operation2.name = "Bar Paco"
-            operation2.date = "25 Dic 11:08"
+            operation2.date = "25 dic. 11:08"
             operation2.type = 0
             operation2.area = 1
             operation2.save()
@@ -95,7 +93,7 @@ class HomeFragment : Fragment() {
             operation3.id = 4
             operation3.value = 2.5
             operation3.name = "Panaderia Toni"
-            operation3.date = "26 Dic 11:08"
+            operation3.date = "26 dic. 11:08"
             operation3.type = 0
             operation3.area = 0
             operation3.save()
@@ -104,7 +102,7 @@ class HomeFragment : Fragment() {
             operation4.id = 5
             operation4.value = 5.3
             operation4.name = "Supermercado Recio"
-            operation4.date = "27 Dic 11:08"
+            operation4.date = "27 dic. 11:08"
             operation4.type = 0
             operation4.area = 0
             operation4.save()
@@ -113,7 +111,7 @@ class HomeFragment : Fragment() {
             operation5.id = 6
             operation5.value = 3.4
             operation5.name = "Churreria Adela"
-            operation5.date = "27 Dic 11:08"
+            operation5.date = "27 dic. 11:08"
             operation5.type = 0
             operation5.area = 1
             operation5.save()
@@ -122,7 +120,7 @@ class HomeFragment : Fragment() {
             operation6.id = 7
             operation6.value = 7.3
             operation6.name = "Librería Paua"
-            operation6.date = "27 Dic 11:08"
+            operation6.date = "27 dic. 11:08"
             operation6.type = 0
             operation6.area = 2
             operation6.save()
@@ -131,7 +129,7 @@ class HomeFragment : Fragment() {
             operation7.id = 8
             operation7.value = 1.2
             operation7.name = "Bar Paco"
-            operation7.date = "28 Dic 11:08"
+            operation7.date = "28 dic. 11:08"
             operation7.type = 0
             operation7.area = 1
             operation7.save()
@@ -140,7 +138,7 @@ class HomeFragment : Fragment() {
             operation8.id = 9
             operation8.value = 6.9
             operation8.name = "Restaurante Antonio"
-            operation8.date = "28 Dic 11:08"
+            operation8.date = "28 dic. 11:08"
             operation8.type = 0
             operation8.area = 1
             operation8.save()
@@ -151,13 +149,13 @@ class HomeFragment : Fragment() {
             operation9.name = "Bar Paco"
             operation9.type = 0
             operation9.area = 1
-            operation9.date = "29 Dic 11:08"
+            operation9.date = "29 dic. 11:08"
             operation9.save()
         }
 
         var incomes = 500.0
         var expenses = 0.0
-        operationList = Operation().queryAll()
+        operationList = Operation().querySorted("date", Sort.DESCENDING)
         for (operation in operationList) {
             if (operation.type == 0) {
                 expenses += operation.value!!
@@ -170,6 +168,7 @@ class HomeFragment : Fragment() {
         incomes_value_text_view.text = formatDoubleValue(incomes)
         balance_text_view.text = formatDoubleValue(incomes - expenses)
 
+        expenses_bar.progress = ((100 * expenses) / incomes).toInt()
         operations_recycler_view.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         operations_recycler_view.adapter = OperationsAdapter(operationList)
     }

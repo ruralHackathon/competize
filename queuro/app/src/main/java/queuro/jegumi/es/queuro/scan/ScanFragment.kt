@@ -67,7 +67,7 @@ class ScanFragment : Fragment() {
                 operationNew.area = array[3].toInt()
 
                 val current = LocalDateTime.now()
-                val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+                val formatter = DateTimeFormatter.ofPattern("dd MMM HH:mm")
                 operationNew.date = current.format(formatter)
                 operationNew.save()
 

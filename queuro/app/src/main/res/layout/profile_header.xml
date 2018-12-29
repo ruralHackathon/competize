@@ -51,12 +51,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        <View
+        <ProgressBar
                 android:id="@+id/incomes_bar"
                 android:layout_below="@id/incomes_text_view"
                 android:layout_width="match_parent"
-                android:background="@color/colorAccent"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_marginTop="@dimen/spacing_xsmall"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_drawable"
                 android:layout_height="@dimen/bar_height"/>
 
         <TextView
@@ -78,13 +81,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        <View
+        <ProgressBar
                 android:id="@+id/expenses_bar"
                 android:layout_below="@id/expenses_text_view"
-                android:background="@color/colorAccent"
                 android:layout_width="match_parent"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:max="100"
+                android:progress="0"
                 android:layout_marginTop="@dimen/spacing_xsmall"
-                android:layout_height="@dimen/bar_height"/>
+                android:layout_height="@dimen/bar_height"
+                android:progressDrawable="@drawable/progress_drawable_expenses" />/>
 
         <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
