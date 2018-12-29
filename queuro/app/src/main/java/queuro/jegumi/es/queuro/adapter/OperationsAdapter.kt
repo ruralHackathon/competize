@@ -54,14 +54,13 @@ class OperationsAdapter(private val operations: List<Operation>) :
     }
 
     private fun getDrawable(type: Int): Int {
-        return when(type) {
-            0 -> R.drawable.supermarket
-            1 -> R.drawable.restaurants
+        return when (type) {
+            1 -> R.drawable.supermarket
+            0 -> R.drawable.restaurants
             2 -> R.drawable.shops
             3 -> R.drawable.transport
             4 -> R.drawable.bank
             else -> R.drawable.transport
-
         }
     }
 }

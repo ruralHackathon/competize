@@ -57,8 +57,8 @@ class CategoriesAdapter(private val categories: List<Category>) :
 
     private fun getDrawable(type: Int): Int {
         return when (type) {
-            0 -> R.drawable.supermarket
-            1 -> R.drawable.restaurants
+            1 -> R.drawable.supermarket
+            0 -> R.drawable.restaurants
             2 -> R.drawable.shops
             3 -> R.drawable.transport
             4 -> R.drawable.bank

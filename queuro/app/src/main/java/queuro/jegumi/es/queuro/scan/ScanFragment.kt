@@ -42,11 +42,11 @@ class ScanFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(view.context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(context as Activity, Manifest.permission.CAMERA)) {
 
             } else {
-                ActivityCompat.requestPermissions(context as Activity, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_CAMERA)
+                ActivityCompat.requestPermissions(this.context as Activity, arrayOf(Manifest.permission.CAMERA), MY_PERMISSIONS_REQUEST_CAMERA)
             }
         } else {
             initScan()
@@ -54,9 +54,9 @@ class ScanFragment : Fragment() {
     }
 
     private fun initScan() {
-        codeScanner = CodeScanner(activity, scanner_view)
+        codeScanner = CodeScanner(scanner_view.context, scanner_view)
         codeScanner.decodeCallback = DecodeCallback {
-            activity.runOnUiThread {
+            activity!!.runOnUiThread {
                 val array = it.text.split(";")
                 val operation = Operation().queryLast()
                 val operationNew = Operation()

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent" android:layout_height="match_parent">
 
     <FrameLayout
             android:id="@+id/analytic_header"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/banner_height"
-            android:background="@color/colorPrimary"/>
+            android:layout_height="@dimen/chart_height"
+            android:elevation="@dimen/spacing_small"
+            android:background="@color/colorWhite">
+
+        <com.anychart.AnyChartView
+                android:id="@+id/any_chart_view"
+                android:paddingTop="@dimen/spacing_medium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+    </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/analytics_recycler_view"
